@@ -3,6 +3,7 @@
 ## Code Source and Attribution
 
 This project uses the **OpenALPR pre-compiled 64-bit binaries for Windows** for license plate recognition and evaluation.  
+OpenALPR source:https://github.com/openalpr/openalpr.
 All image degradation and enhancement code in this repository is implemented by our team for academic use. In order to run OpenALPR, you must first install the Windows Visual C++ runtime libraries. The installer (vcredist_x64.exe) is included in the package.
 
 ## Project Description
