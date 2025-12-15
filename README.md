@@ -30,13 +30,13 @@ vcredist_x64.exe # The installer of Windows Visual C++ runtime libraries.
 
 ## How to Run
 ### 1. Generate Degraded Images
-python degradation.py
+`python degradation.py`
 Input: `contrast/clean/`  
 Output: `contrast/degraded/`
 
 
 ### 2. Enhance Degraded Images
-python enhancement.py
+`python enhancement.py`
 Input: `contrast/degraded/`  
 Output: `contrast/enhance/`  
 Each degraded image produces two enhanced results using different methods.
