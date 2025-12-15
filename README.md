@@ -15,13 +15,16 @@ This repository contains the code for the ECE 253 (Digital Image Processing) Fin
 ## Directory Structure
 
 ```
+Noise             # Noise images and preprocessing results
+blur/orig         # Original images used for blurring
 contrast/
-├── clean/ # Original clean images
-├── degraded/ # Images after synthetic degradation
-└── enhance/ # Enhanced images (two methods per degraded image)
-alpr.exe    # OpenALPR pre-compiled binaries (Windows)
-degradation.py # Generate degraded images from clean images
-enhancement.py # Enhance degraded images
+├── clean/        # Original clean images
+├── degraded/     # Images after synthetic degradation
+└── enhance/      # Enhanced images (two methods per degraded image)
+alpr.exe          # OpenALPR pre-compiled binaries (Windows)
+degradation.py    # Generate degraded images from clean images
+enhancement.py    # Enhance degraded images
+motion_deblur_compare.py    # Comparison of two deblur methods
 README.md
 vcredist_x64.exe # The installer of Windows Visual C++ runtime libraries.
 ```
@@ -37,13 +40,13 @@ vcredist_x64.exe # The installer of Windows Visual C++ runtime libraries.
 
 ### 1. Contrast
 
-#### 1. Generate Degraded Images
+#### 1.1 Generate Degraded Images
 
 - `python degradation.py`
 - Input: `contrast/clean/`  
 - Output: `contrast/degraded/`
 
-#### 2. Enhance Degraded Images
+#### 1.2 Enhance Degraded Images
 
 - `python enhancement.py`
 - Input: `contrast/degraded/`  
@@ -60,15 +63,15 @@ The output files are in blur/out
 
 ### 3. Noise Reduction
 
-#### 1. Bilateral filtering
+#### 3.1 Bilateral filtering
 
-- `python code_bilateral.py`
+- `python Noise/bilateral/code_bilateral.py`
 - Input: `Noise/bilateral/bilateral_inputs`  
 - Output: `Noise/bilateral/bilateral_outputs`
 
-#### 2. BM3D
+#### 3.2 BM3D
 
-- `python code_bm3d.py`
+- `python Noise/bm3d/code_bm3d.py`
 - Input: `Noise/bm3d/bm3d_inputs`  
 - Output: `Noise/bm3d/bm3d_outputs`
 
@@ -144,9 +147,3 @@ Where:
 
    OpenAlpr Command Line Utility
 ```
-
-## Notes
-
-- `degradation.py` degrades images.
-- `enhancement.py` restores degraded images.
-- OpenALPR is used for evaluation only.
