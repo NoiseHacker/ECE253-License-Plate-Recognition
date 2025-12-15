@@ -3,7 +3,9 @@
 ## Code Source and Attribution
 
 This project uses the **OpenALPR pre-compiled 64-bit binaries for Windows** for license plate recognition and evaluation.  
+
 OpenALPR source:https://github.com/openalpr/openalpr.
+
 All image degradation and enhancement code in this repository is implemented by our team for academic use. In order to run OpenALPR, you must first install the Windows Visual C++ runtime libraries. The installer (vcredist_x64.exe) is included in the package.
 
 ## Project Description
@@ -56,7 +58,21 @@ python motion_deblur_compare.py blur/orig/filename
 
 The output files are in blur/out
 
-### 3. License Plate Recognition
+### 3. Noise Reduction
+
+#### 1. Bilateral filtering
+
+- `python code_bilateral.py`
+- Input: `Noise/bilateral/bilateral_inputs`  
+- Output: `Noise/bilateral/bilateral_outputs`
+
+#### 2. BM3D
+
+- `python code_bm3d.py`
+- Input: `Noise/bm3d/bm3d_inputs`  
+- Output: `Noise/bm3d/bm3d_outputs`
+
+### 4. License Plate Recognition
 
 Example using OpenALPR CLI:
 
